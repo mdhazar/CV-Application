@@ -35,7 +35,7 @@ export default function Projects({ onSubmit }) {
   return (
     <div>
       <div>
-        <h1>Edit General Information</h1>
+        <h1>Projects</h1>
       </div>
       <div className="general-info">
         <div>

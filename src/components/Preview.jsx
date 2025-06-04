@@ -58,8 +58,21 @@ export default function Preview({ data = "" }) {
           <div className="education">
             {data.projectName1 || "Project1"}, {data.projectSkills1 || "skills"}
             <div>
-              {data.project1github || "github"} |{" "}
-              {data.project1Url || "website"}
+              <a
+                href={`https://github.com/${data.project1github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.project1github || "github"}
+              </a>{" "}
+              |{" "}
+              <a
+                href={data.project1Url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.project1Url || "website"}
+              </a>
             </div>
           </div>
           <div>
