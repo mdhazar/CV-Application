@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Edit from "./Edit";
+import GeneralInfo from "./GeneralInfo";
 
 import Preview from "../components/Preview";
+import Summary from "./Summary";
 export default function ResumeBuilder() {
   const [data, setData] = useState({
     fullName: "",
@@ -24,13 +25,17 @@ export default function ResumeBuilder() {
   });
   const onChangeName = (formData) => {
     console.log("Preview received new form data:", formData);
-    setData(formData);
+    setData((prevData) => ({
+      ...prevData,
+      ...formData,
+    }));
   };
 
   return (
     <div className="container">
       <div className="forms">
-        <Edit onSubmit={onChangeName} />
+        <GeneralInfo onSubmit={onChangeName} />
+        <Summary onSubmit={onChangeName} />
       </div>
       <div>
         <Preview data={data} />

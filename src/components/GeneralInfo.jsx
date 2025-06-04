@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Edit({ onSubmit }) {
+export default function GeneralInfo({ onSubmit }) {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
