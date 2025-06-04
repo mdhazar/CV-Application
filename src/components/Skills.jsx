@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Skills({ onSubmit }) {
   const [formData, setFormData] = useState({
-    summary: "",
+    skills: "",
   });
 
   const handleInputChange = (event) => {
@@ -13,6 +13,7 @@ export default function Skills({ onSubmit }) {
       [name]: value,
     });
   };
+  const [showForm, setShowForm] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -22,37 +23,44 @@ export default function Skills({ onSubmit }) {
 
   const handleReset = () => {
     setFormData({
-      summary: "",
+      skills: "",
     });
+  };
+  const toggleForm = () => {
+    setShowForm(!showForm);
   };
 
   return (
     <div>
       <div>
-        <h1>Summary</h1>
+        <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
+          Skills
+        </h1>
       </div>
-      <div className="general-info">
-        <div>
+      {showForm && (
+        <div className="general-info">
           <div>
-            <textarea
-              rows={4}
-              cols={40}
-              type="text"
-              id="summary"
-              name="summary"
-              value={formData.summary}
-              onChange={handleInputChange}
-              placeholder="Enter your skills"
-            />
-          </div>
-          <div style={{ marginTop: "20px" }}>
-            <button onClick={handleSubmit}>Submit</button>
-            <button onClick={handleReset} style={{ marginLeft: "10px" }}>
-              Reset
-            </button>
+            <div>
+              <textarea
+                rows={4}
+                cols={40}
+                type="text"
+                id="skills"
+                name="skills"
+                value={formData.skills}
+                onChange={handleInputChange}
+                placeholder="Enter your skills"
+              />
+            </div>
+            <div style={{ marginTop: "20px" }}>
+              <button onClick={handleSubmit}>Submit</button>
+              <button onClick={handleReset} style={{ marginLeft: "10px" }}>
+                Reset
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

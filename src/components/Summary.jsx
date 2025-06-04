@@ -2,9 +2,9 @@ import { useState } from "react";
 
 export default function Summary({ onSubmit }) {
   const [formData, setFormData] = useState({
-    skills: "",
+    summary: "",
   });
-
+  const [showForm, setShowForm] = useState(false);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     console.log("Input changed:", name, value);
@@ -22,37 +22,44 @@ export default function Summary({ onSubmit }) {
 
   const handleReset = () => {
     setFormData({
-      skills: "",
+      summary: "",
     });
+  };
+  const toggleForm = () => {
+    setShowForm(!showForm);
   };
 
   return (
     <div>
       <div>
-        <h1>Summary</h1>
+        <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
+          Summary
+        </h1>
       </div>
-      <div className="general-info">
-        <div>
+      {showForm && (
+        <div className="general-info">
           <div>
-            <textarea
-              rows={4}
-              cols={40}
-              type="text"
-              id="skills"
-              name="skills"
-              value={formData.skills}
-              onChange={handleInputChange}
-              placeholder="Enter your skills"
-            />
-          </div>
-          <div style={{ marginTop: "20px" }}>
-            <button onClick={handleSubmit}>Submit</button>
-            <button onClick={handleReset} style={{ marginLeft: "10px" }}>
-              Reset
-            </button>
+            <div>
+              <textarea
+                rows={4}
+                cols={40}
+                type="text"
+                id="summary"
+                name="summary"
+                value={formData.summary}
+                onChange={handleInputChange}
+                placeholder="Enter your summary"
+              />
+            </div>
+            <div style={{ marginTop: "20px" }}>
+              <button onClick={handleSubmit}>Submit</button>
+              <button onClick={handleReset} style={{ marginLeft: "10px" }}>
+                Reset
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
