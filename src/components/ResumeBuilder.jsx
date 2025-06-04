@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GeneralInfo from "./GeneralInfo";
-
+import Projects from "./Projects";
 import Preview from "../components/Preview";
 import Summary from "./Summary";
 import Education from "./Education";
@@ -40,6 +40,7 @@ export default function ResumeBuilder() {
         <Summary onSubmit={onChangeName} />
         <Education onSubmit={onChangeName} />
         <Skills onSubmit={onChangeName} />
+        <Projects onSubmit={onChangeName} />
       </div>
       <div>
         <Preview data={data} />
