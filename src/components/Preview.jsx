@@ -23,7 +23,8 @@ export default function Preview({ data = "" }) {
           <div className="education">
             {data.school || "XYZ University"}, {data.department || "department"}
             <div>
-              {data.startDate || "startDate"} | {data.endDate || "endDate"}
+              {data.schoolStartDate || "startDate"} |{" "}
+              {data.schoolEndDate || "endDate"}
             </div>
           </div>
         </div>
@@ -33,15 +34,15 @@ export default function Preview({ data = "" }) {
         <div className="projects">
           <h1>{"Projects"}</h1>
           <div className="education">
-            {data.project1 || "Project1"}, {data.skills || "skills"}
+            {data.projectName1 || "Project1"}, {data.projectSkills1 || "skills"}
             <div>
               {data.project1github || "github"} |{" "}
-              {data.project1website || "website"}
+              {data.project1Url || "website"}
             </div>
           </div>
           <div>
             •{" "}
-            {data.project1 ||
+            {data.project1Summary ||
               "Developed a full-featured CV web application using React."}
           </div>
         </div>

@@ -1,12 +1,20 @@
 .container {
   display: flex;
+  background-color: bisque;
+  justify-content: space-around;
 }
-
+.forms {
+  border: 1px solid;
+  padding: 2.5rem;
+}
+.general {
+  margin: 20mm 25mm 20mm 25mm;
+}
 .preview {
+  min-width: 21cm;
   width: 21cm;
   height: 29.7cm;
-  margin: 30mm 45mm 30mm 45mm;
-  background-color: bisque;
+
   border: 1px solid;
 }
 
@@ -19,10 +27,6 @@
   justify-content: space-between;
 }
 h1 {
-  font-size: 3.2em;
+  font-size: 1.2cm;
   margin-bottom: 0;
-}
-@page {
-  size: A4;
-  margin: 0;
 }

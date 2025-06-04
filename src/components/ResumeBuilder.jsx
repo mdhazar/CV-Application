@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Edit from "./Edit";
+
 import Preview from "../components/Preview";
 export default function ResumeBuilder() {
+  const [data, setData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    github: "",
+    linkedin: "",
+    summary: "",
+    school: "",
+    dapartment: "",
+    schoolStartDate: "",
+    schoolEndDate: "",
+    jobTitle: "",
+    projectName1: "",
+    projectSkills1: "",
+    projectName: "",
+    project1github: "",
+    project1Url: "",
+    project1Summary: "",
+  });
   const onChangeName = (formData) => {
     console.log("Preview received new form data:", formData);
-    return formData;
+    setData(formData);
   };
 
   return (
@@ -12,8 +32,9 @@ export default function ResumeBuilder() {
       <div className="forms">
         <Edit onSubmit={onChangeName} />
       </div>
-
-      <Preview />
+      <div>
+        <Preview data={data} />
+      </div>
     </div>
   );
 }

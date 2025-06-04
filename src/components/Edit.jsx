@@ -6,6 +6,7 @@ export default function Edit({ onSubmit }) {
     email: "",
     phone: "",
     github: "",
+    linkedin: "",
   });
 
   const handleInputChange = (event) => {
@@ -29,6 +30,7 @@ export default function Edit({ onSubmit }) {
       email: "",
       phone: "",
       github: "",
+      linkedin: "",
     });
   };
 
@@ -84,6 +86,17 @@ export default function Edit({ onSubmit }) {
               value={formData.github}
               onChange={handleInputChange}
               placeholder="Enter your GitHub username"
+            />
+          </div>
+          <div>
+            <label htmlFor="linkedin">Linkedin:</label>
+            <input
+              type="text"
+              id="linkedin"
+              name="linkedin"
+              value={formData.linkedin}
+              onChange={handleInputChange}
+              placeholder="Enter your Linkedin username"
             />
           </div>
 
