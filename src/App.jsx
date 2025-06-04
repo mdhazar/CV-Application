@@ -1,13 +1,11 @@
 import "./App.css";
-import General from "./components/General";
-import Edit from "./components/Edit";
+
+import Preview from "./components/Preview";
 
 function App() {
   return (
     <>
-      <General />
-      <Edit />
-      <h1>Vite + React</h1>
+      <Preview />
     </>
   );
 }
