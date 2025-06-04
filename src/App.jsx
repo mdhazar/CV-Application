@@ -1,11 +1,11 @@
 import "./App.css";
 
-import Preview from "./components/Preview";
+import ResumeBuilder from "./components/ResumeBuilder";
 
 function App() {
   return (
     <>
-      <Preview />
+      <ResumeBuilder />
     </>
   );
 }
