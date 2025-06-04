@@ -7,8 +7,24 @@ export default function Preview({ data = "" }) {
           <div>
             <div>{data.email || "John.Doe@example.com"}</div>
             <div>{data.phone || "+90-554-123-12-13"}</div>
-            <div>{data.github || "Github"}</div>
-            <div>{data.linkedin || "Linkedin"}</div>
+            <div>
+              <a
+                href={`https://github.com/${data.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.github || "Github"}
+              </a>
+            </div>
+            <div>
+              <a
+                href={`https://linkedin.com/in/${data.linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.linkedin || "Linkedin"}
+              </a>
+            </div>
           </div>
         </div>
         <div className="summary">
@@ -29,7 +45,13 @@ export default function Preview({ data = "" }) {
           </div>
         </div>
         <div>
-          <h1>{"Skills"}</h1>
+          <h1>Skills</h1>
+          <div style={{ whiteSpace: "pre-line" }}>
+            {data?.skills ||
+              `Front End: Javascript, TypeScript, React, React Native, Expo, Redux, Axios, Vue.js, NextJs, jQuery
+                Back End: Java, Python, NodeJs, OOP, Data Structures, Design Patterns, Maven, Spring Core, Spring Boot, Spring Security, SQL, PostgreSQL, MySql, JWT, Git, .Net, Docker
+                Additional: AWS, Azure, Firebase, Postman, Swagger, CI/CD, Debugging, Figma, Shadcn`}
+          </div>
         </div>
         <div className="projects">
           <h1>{"Projects"}</h1>

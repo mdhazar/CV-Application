@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export default function Summary({ onSubmit }) {
+export default function Skills({ onSubmit }) {
   const [formData, setFormData] = useState({
-    skills: "",
+    summary: "",
   });
 
   const handleInputChange = (event) => {
@@ -22,7 +22,7 @@ export default function Summary({ onSubmit }) {
 
   const handleReset = () => {
     setFormData({
-      skills: "",
+      summary: "",
     });
   };
 
@@ -38,9 +38,9 @@ export default function Summary({ onSubmit }) {
               rows={4}
               cols={40}
               type="text"
-              id="skills"
-              name="skills"
-              value={formData.skills}
+              id="summary"
+              name="summary"
+              value={formData.summary}
               onChange={handleInputChange}
               placeholder="Enter your skills"
             />

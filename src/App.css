@@ -8,6 +8,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
 }
 .container {
   display: flex;
@@ -15,7 +16,7 @@
 }
 .forms {
   border: 1px solid;
-  padding: 2.5rem;
+  padding: 4rem 2rem 2rem 2rem;
 }
 .general {
   margin: 20mm 25mm 20mm 25mm;
@@ -27,6 +28,11 @@
 
   border: 1px solid;
 }
+.preview h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
 
 .contact div {
   display: flex;
@@ -35,10 +41,6 @@
 .education {
   display: flex;
   justify-content: space-between;
-}
-h1 {
-  font-size: 1.2cm;
-  margin-bottom: 0;
 }
 
 button {

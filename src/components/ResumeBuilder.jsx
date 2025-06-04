@@ -3,6 +3,8 @@ import GeneralInfo from "./GeneralInfo";
 
 import Preview from "../components/Preview";
 import Summary from "./Summary";
+import Education from "./Education";
+import Skills from "./Skills";
 export default function ResumeBuilder() {
   const [data, setData] = useState({
     fullName: "",
@@ -36,6 +38,8 @@ export default function ResumeBuilder() {
       <div className="forms">
         <GeneralInfo onSubmit={onChangeName} />
         <Summary onSubmit={onChangeName} />
+        <Education onSubmit={onChangeName} />
+        <Skills onSubmit={onChangeName} />
       </div>
       <div>
         <Preview data={data} />
