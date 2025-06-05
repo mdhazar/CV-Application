@@ -5,6 +5,7 @@ import Preview from "../components/Preview";
 import Summary from "./Summary";
 import Education from "./Education";
 import Skills from "./Skills";
+import Experience from "./Experience";
 export default function ResumeBuilder() {
   const [data, setData] = useState({
     fullName: "",
@@ -41,6 +42,7 @@ export default function ResumeBuilder() {
         <Education onSubmit={onChangeName} />
         <Skills onSubmit={onChangeName} />
         <Projects onSubmit={onChangeName} />
+        <Experience onSubmit={onChangeName}/>
       </div>
       <div>
         <Preview data={data} />

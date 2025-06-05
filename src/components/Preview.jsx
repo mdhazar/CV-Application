@@ -80,6 +80,23 @@ export default function Preview({ data = "" }) {
             {data.project1Summary ||
               "Developed a full-featured CV web application using React."}
           </div>
+        <div className="experience">
+          <h1>Experience</h1>
+          <div className="education">
+            {data.experienceName1 || "XYZ company"}, {data.experienceRole1 || "Front end developer"}
+            <div>
+              {data.experienceStartDate || "startDate"} |{" "}
+              {data.experienceEndDate || "endDate"}
+            </div>
+            
+          </div>
+          <div>
+            •{" "}
+            {data.project1Summary ||
+              "Developed a full-featured CV web application using React."}
+          </div>
+          
+        </div>
         </div>
       </div>
     </div>
