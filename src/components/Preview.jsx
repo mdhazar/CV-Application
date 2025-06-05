@@ -37,10 +37,10 @@ export default function Preview({ data = "" }) {
         <div>
           <h1>{"Education"}</h1>
           <div className="education">
-            {data.school || "XYZ University"}, {data.department || "department"}
+            {data.school || "XYZ University"}, {data.department || "Department"}
             <div>
-              {data.schoolStartDate || "startDate"} |{" "}
-              {data.schoolEndDate || "endDate"}
+              {data.schoolStartDate || "Start Date"} |{" "}
+              {data.schoolEndDate || "End Date"}
             </div>
           </div>
         </div>
@@ -56,14 +56,14 @@ export default function Preview({ data = "" }) {
         <div className="projects">
           <h1>{"Projects"}</h1>
           <div className="education">
-            {data.projectName || "Project"}, {data.projectSkills || "skills"}
+            {data.projectName || "Project"}, {data.projectSkills || "Skills"}
             <div>
               <a
                 href={`https://github.com/${data.project1github}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {data.projectGithub || "github"}
+                {"Github"}
               </a>{" "}
               |{" "}
               <a
@@ -71,7 +71,7 @@ export default function Preview({ data = "" }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {data.projectUrl || "website"}
+                {"Website"}
               </a>
             </div>
           </div>
@@ -85,8 +85,8 @@ export default function Preview({ data = "" }) {
           <div className="education">
             {data.experienceName || "XYZ company"}, {data.jobRole || "Front end developer"}
             <div>
-              {data.experienceStartDate || "startDate"} |{" "}
-              {data.experienceEndDate || "endDate"}
+              {data.experienceStartDate || "Start Date"} |{" "}
+              {data.experienceEndDate || "End Date"}
             </div>
             
           </div>
