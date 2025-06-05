@@ -30,19 +30,36 @@ export default function Preview({ data = "" }) {
         <div className="summary">
           <h1>{"Summary"}</h1>
           <div>
-            {data.summary ||
-              "Velit consequat ut Lorem mollit deserunt id occaecat in id sunt duis aliquip. Culpa amet eiusmod sit Lorem nulla dolore adipisicing proident. Incididunt commodo et ad culpa."}
+            {data.summary && data.summary.length > 0 ? (
+              data.summary.map((summary, index) => (
+                <div key={index} >
+                  • {summary}
+                </div>
+              ))
+            ) : (
+              "Velit consequat ut Lorem mollit deserunt id occaecat in id sunt duis aliquip. Culpa amet eiusmod sit Lorem nulla dolore adipisicing proident. Incididunt commodo et ad culpa."
+            )}
           </div>
         </div>
         <div>
           <h1>{"Education"}</h1>
-          <div className="education">
-            {data.school || "XYZ University"}, {data.department || "Department"}
-            <div>
-              {data.schoolStartDate || "Start Date"} |{" "}
-              {data.schoolEndDate || "End Date"}
+          {data.education && data.education.length > 0 ? (
+            data.education.map((edu, index) => (
+              <div key={index} className="education" >
+                <div>
+                  {edu.school || "XYZ University"}, {edu.department || "Department"}
+                </div>
+                <div>
+                  {edu.schoolStartDate || "Start Date"} | {edu.schoolEndDate || "End Date"}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="education">
+              XYZ University, Department
+              <div>Start Date | End Date</div>
             </div>
-          </div>
+          )}
         </div>
         <div>
           <h1>Skills</h1>
