@@ -49,7 +49,6 @@ export default function Summary({ onSubmit }) {
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
                   <textarea
                     rows={4}
-                    cols={40}
                     type="text"
                     value={summary}
                     onChange={(e) => handleInputChange(index, e.target.value)}
