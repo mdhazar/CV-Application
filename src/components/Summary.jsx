@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 
 export default function Summary({ onSubmit }) {
   const [summary, setSummary] = useState([""]);
@@ -32,8 +32,6 @@ export default function Summary({ onSubmit }) {
     setShowForm(!showForm);
   };
 
-  
-
   return (
     <div>
       <div>
@@ -45,42 +43,39 @@ export default function Summary({ onSubmit }) {
         <div className="general-info">
           <div>
             {summary.map((summary, index) => (
-              <div key={index} >
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+              <div key={index}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "10px",
+                  }}
+                >
                   <textarea
                     rows={4}
-                    type="text"
                     value={summary}
                     onChange={(e) => handleInputChange(index, e.target.value)}
                     placeholder={`Enter summary ${index + 1}`}
                   />
-                    <button 
-                      type="button"
-                      onClick={() => removeSummary(index)}
-                      style={{ 
-                        backgroundColor: "#ff4757", 
-                        color:"white",
-                        fontSize:"1rem"
-                      }}
-                    >
-                      -
-                    </button>
-                    <button 
-                      type="button"
-                      onClick={addSummary}
-                    >
-                      +
-                    </button>
+                  <button
+                    type="button"
+                    onClick={() => removeSummary(index)}
+                    style={{
+                      backgroundColor: "#ff4757",
+                      color: "white",
+                    }}
+                  >
+                    X
+                  </button>
+                  <button type="button" onClick={addSummary}>
+                    ＋
+                  </button>
                 </div>
               </div>
             ))}
-            <div style={{ marginTop: "20px", display:"flex", gap:"10px"}}>
-              
+            <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
               <button onClick={handleSubmit}>Submit</button>
-              <button onClick={handleReset} >
-                Reset
-              </button>
-              
+              <button onClick={handleReset}>Reset</button>
             </div>
           </div>
         </div>

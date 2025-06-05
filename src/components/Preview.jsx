@@ -30,27 +30,25 @@ export default function Preview({ data = "" }) {
         <div className="summary">
           <h1>{"Summary"}</h1>
           <div>
-            {data.summary && data.summary.length > 0 ? (
-              data.summary.map((summary, index) => (
-                <div key={index} >
-                  • {summary}
-                </div>
-              ))
-            ) : (
-              "Velit consequat ut Lorem mollit deserunt id occaecat in id sunt duis aliquip. Culpa amet eiusmod sit Lorem nulla dolore adipisicing proident. Incididunt commodo et ad culpa."
-            )}
+            {data.summary && data.summary.length > 0
+              ? data.summary.map((summary, index) => (
+                  <div key={index}>{summary}</div>
+                ))
+              : "Velit consequat ut Lorem mollit deserunt id occaecat in id sunt duis aliquip. Culpa amet eiusmod sit Lorem nulla dolore adipisicing proident. Incididunt commodo et ad culpa."}
           </div>
         </div>
         <div>
           <h1>{"Education"}</h1>
           {data.education && data.education.length > 0 ? (
             data.education.map((edu, index) => (
-              <div key={index} className="education" >
+              <div key={index} className="education">
                 <div>
-                  {edu.school || "XYZ University"}, {edu.department || "Department"}
+                  {edu.school || "XYZ University"},{" "}
+                  {edu.department || "Department"}
                 </div>
                 <div>
-                  {edu.schoolStartDate || "Start Date"} | {edu.schoolEndDate || "End Date"}
+                  {edu.schoolStartDate || "Start Date"} |{" "}
+                  {edu.schoolEndDate || "End Date"}
                 </div>
               </div>
             ))
@@ -64,10 +62,13 @@ export default function Preview({ data = "" }) {
         <div>
           <h1>Skills</h1>
           <div style={{ whiteSpace: "pre-line" }}>
-            {data?.skills ||
-              `Front End: Javascript, TypeScript, React, React Native, Expo, Redux, Axios, Vue.js, NextJs, jQuery
-                Back End: Java, Python, NodeJs, OOP, Data Structures, Design Patterns, Maven, Spring Core, Spring Boot, Spring Security, SQL, PostgreSQL, MySql, JWT, Git, .Net, Docker
-                Additional: AWS, Azure, Firebase, Postman, Swagger, CI/CD, Debugging, Figma, Shadcn`}
+            {data.skill && data.skill.length > 0
+              ? data.skill.map((skill, index) => (
+                  <div key={index}>• {skill}</div>
+                ))
+              : `Front End: Javascript, TypeScript, React, React Native, Expo, Redux, Axios, Vue.js, NextJs, jQuery
+Back End: Java, Python, NodeJs, OOP, Data Structures, Design Patterns, Maven, Spring Core, Spring Boot, Spring Security, SQL, PostgreSQL, MySql, JWT, Git, .Net, Docker
+Additional: AWS, Azure, Firebase, Postman, Swagger, CI/CD, Debugging, Figma, Shadcn`}
           </div>
         </div>
         <div className="projects">
@@ -97,23 +98,22 @@ export default function Preview({ data = "" }) {
             {data.projectSummary ||
               "Developed a full-featured CV web application using React."}
           </div>
-        <div className="experience">
-          <h1>Experience</h1>
-          <div className="education">
-            {data.experienceName || "XYZ company"}, {data.jobRole || "Front end developer"}
-            <div>
-              {data.experienceStartDate || "Start Date"} |{" "}
-              {data.experienceEndDate || "End Date"}
+          <div className="experience">
+            <h1>Experience</h1>
+            <div className="education">
+              {data.experienceName || "XYZ company"},{" "}
+              {data.jobRole || "Front end developer"}
+              <div>
+                {data.experienceStartDate || "Start Date"} |{" "}
+                {data.experienceEndDate || "End Date"}
+              </div>
             </div>
-            
+            <div>
+              •{" "}
+              {data.experienceSummary ||
+                "Developed a full-featured CV web application using React."}
+            </div>
           </div>
-          <div>
-            •{" "}
-            {data.experienceSummary ||
-              "Developed a full-featured CV web application using React."}
-          </div>
-          
-        </div>
         </div>
       </div>
     </div>
