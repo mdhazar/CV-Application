@@ -10,6 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
 }
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -17,6 +18,7 @@
 .forms {
   border: 1px solid;
   padding: 4rem 2rem 2rem 2rem;
+  min-width: 500px;
 }
 .general {
   margin: 20mm 25mm 20mm 25mm;
@@ -25,7 +27,6 @@
   min-width: 21cm;
   width: 21cm;
   height: 29.7cm;
-
   border: 1px solid;
 }
 .preview h1 {
