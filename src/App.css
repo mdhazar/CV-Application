@@ -2,8 +2,8 @@
   font-family: Arial, sans-serif;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #213547;
+  background-color: bisque;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,9 +16,10 @@
   justify-content: space-around;
 }
 .forms {
-  border: 1px solid;
   padding: 4rem 2rem 2rem 2rem;
   min-width: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.101);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.362);
 }
 .general {
   margin: 20mm 25mm 20mm 25mm;
@@ -27,7 +28,8 @@
   min-width: 21cm;
   width: 21cm;
   height: 29.7cm;
-  border: 1px solid;
+  border: 1px solid rgba(0, 0, 0, 0.101);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.362);
 }
 .preview h1 {
   font-size: 2rem;
@@ -44,6 +46,42 @@
   justify-content: space-between;
 }
 
+.general-info {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.general-info textarea {
+  width: 95%;
+  padding: 0.75rem;
+  background-color: rgb(255, 228, 196);
+}
+
+.general-info input {
+  width: 95%;
+  padding: 0.75rem;
+  background-color: rgba(252, 252, 251, 0.526);
+}
+
+.general-info > div > div {
+  margin-bottom: 0.75rem;
+}
+
+.forms h1 {
+  margin: 1rem 0 0.5rem 0;
+  padding: 0.75rem;
+  background-color: rgba(217, 156, 51, 0.199);
+  border-radius: 16px;
+}
+
+.forms h1:hover {
+  background-color: rgba(188, 122, 8, 0.546);
+}
+
+.forms h1:first-child {
+  margin-top: 0;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -51,7 +89,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #fcc2235c;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -69,15 +107,3 @@ a:hover{
   text-decoration: underline;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: bisque;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
