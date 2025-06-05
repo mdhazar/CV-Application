@@ -2,10 +2,10 @@ import { useState } from "react";
 
 export default function Experience({ onSubmit }) {
   const [formData, setFormData] = useState({
-    experienceName1: "",
-    experienceRole1: "",
+    experienceName: "",
+    experienceRole: "",
     experienceStartDate: "",
-    projexperienceEndDateect1Url: "",
+    experienceEndDate: "",
   });
   const [showForm, setShowForm] = useState(false);
   const handleInputChange = (event) => {
@@ -52,7 +52,7 @@ export default function Experience({ onSubmit }) {
                 type="text"
                 id="experienceName"
                 name="experienceName"
-                value={formData.experienceName1}
+                value={formData.experienceName}
                 onChange={handleInputChange}
                 placeholder="Enter your company name"
               />
@@ -64,7 +64,7 @@ export default function Experience({ onSubmit }) {
                 type="text"
                 id="jobRole"
                 name="jobRole"
-                value={formData.jobRole1}
+                value={formData.jobRole}
                 onChange={handleInputChange}
                 placeholder="Enter your job role"
               />
@@ -77,7 +77,7 @@ export default function Experience({ onSubmit }) {
                 type="text"
                 id="experienceSummary"
                 name="experienceSummary"
-                value={formData.experienceSummary1}
+                value={formData.experienceSummary}
                 onChange={handleInputChange}
                 placeholder="Enter your achievements/role description"
               />

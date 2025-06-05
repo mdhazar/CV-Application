@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import GeneralInfo from "./GeneralInfo";
 import Projects from "./Projects";
 import Preview from "../components/Preview";
@@ -7,25 +7,8 @@ import Education from "./Education";
 import Skills from "./Skills";
 import Experience from "./Experience";
 export default function ResumeBuilder() {
-  const [data, setData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    github: "",
-    linkedin: "",
-    summary: "",
-    school: "",
-    dapartment: "",
-    schoolStartDate: "",
-    schoolEndDate: "",
-    jobTitle: "",
-    projectName1: "",
-    projectSkills1: "",
-    project1github: "",
-    projectGithub1: "",
-    project1Summary: "",
-  });
-  const onFormSubmit = (formData) => {
+  const [data, setData] = useState();
+  const onChangeName = (formData) => {
     setData((prevData) => ({
       ...prevData,
       ...formData,
@@ -35,12 +18,12 @@ export default function ResumeBuilder() {
   return (
     <div className="container">
       <div className="forms">
-        <GeneralInfo onSubmit={onFormSubmit} />
-        <Summary onSubmit={onFormSubmit} />
-        <Education onSubmit={onFormSubmit} />
-        <Skills onSubmit={onFormSubmit} />
-        <Projects onSubmit={onFormSubmit} />
-        <Experience onSubmit={onFormSubmit}/>
+        <GeneralInfo onSubmit={onChangeName} />
+        <Summary onSubmit={onChangeName} />
+        <Education onSubmit={onChangeName} />
+        <Skills onSubmit={onChangeName} />
+        <Projects onSubmit={onChangeName} />
+        <Experience onSubmit={onChangeName}/>
       </div>
       <div>
         <Preview data={data} />
