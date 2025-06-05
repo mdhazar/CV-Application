@@ -43,7 +43,7 @@ export default function Skills({ onSubmit }) {
             <div>
               <textarea
                 rows={4}
-                cols={40}
+                cols={30}
                 type="text"
                 id="skills"
                 name="skills"

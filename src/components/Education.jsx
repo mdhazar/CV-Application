@@ -70,7 +70,7 @@ export default function Education({ onSubmit }) {
             </div>
 
             <div>
-              <label htmlFor="phone">Start Date:</label>
+              <label htmlFor="startDate">Start Date:</label>
               <input
                 type="text"
                 id="schoolStartDate"
@@ -82,12 +82,12 @@ export default function Education({ onSubmit }) {
             </div>
 
             <div>
-              <label htmlFor="github">End Date:</label>
+              <label htmlFor="endDate">End Date:</label>
               <input
                 type="text"
                 id="schoolEndDate"
                 name="schoolEndDate"
-                value={formData.github}
+                value={formData.schoolEndDate}
                 onChange={handleInputChange}
                 placeholder="Enter your end date"
               />

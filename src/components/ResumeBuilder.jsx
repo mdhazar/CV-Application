@@ -21,13 +21,11 @@ export default function ResumeBuilder() {
     jobTitle: "",
     projectName1: "",
     projectSkills1: "",
-    projectName: "",
     project1github: "",
-    project1Url: "",
+    projectGithub1: "",
     project1Summary: "",
   });
-  const onChangeName = (formData) => {
-    console.log("Preview received new form data:", formData);
+  const onFormSubmit = (formData) => {
     setData((prevData) => ({
       ...prevData,
       ...formData,
@@ -37,12 +35,12 @@ export default function ResumeBuilder() {
   return (
     <div className="container">
       <div className="forms">
-        <GeneralInfo onSubmit={onChangeName} />
-        <Summary onSubmit={onChangeName} />
-        <Education onSubmit={onChangeName} />
-        <Skills onSubmit={onChangeName} />
-        <Projects onSubmit={onChangeName} />
-        <Experience onSubmit={onChangeName}/>
+        <GeneralInfo onSubmit={onFormSubmit} />
+        <Summary onSubmit={onFormSubmit} />
+        <Education onSubmit={onFormSubmit} />
+        <Skills onSubmit={onFormSubmit} />
+        <Projects onSubmit={onFormSubmit} />
+        <Experience onSubmit={onFormSubmit}/>
       </div>
       <div>
         <Preview data={data} />

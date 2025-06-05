@@ -25,10 +25,11 @@ export default function Experience({ onSubmit }) {
 
   const handleReset = () => {
     setFormData({
-        experienceName1: "",
-        experienceRole1: "",
+        experienceName: "",
+        jobRole: "",
+        experienceSummary:"",
         experienceStartDate: "",
-        projexperienceEndDateect1Url: "",
+        experienceEndDate: "",
     });
   };
   const toggleForm = () => {
@@ -46,26 +47,39 @@ export default function Experience({ onSubmit }) {
         <div className="general-info">
           <div>
             <div>
-              <label htmlFor="experienceName1">Company Name:</label>
+              <label htmlFor="experienceName">Company Name:</label>
               <input
                 type="text"
-                id="experienceName1"
-                name="experienceName1"
+                id="experienceName"
+                name="experienceName"
                 value={formData.experienceName1}
                 onChange={handleInputChange}
-                placeholder="Enter your project name"
+                placeholder="Enter your company name"
               />
+              
+            </div>
+            <div>
+              <label htmlFor="jobRole">Job Role:</label>
+              <input
+                type="text"
+                id="jobRole"
+                name="jobRole"
+                value={formData.jobRole1}
+                onChange={handleInputChange}
+                placeholder="Enter your job role"
+              />
+              
             </div>
 
             <div>
-              <label htmlFor="experienceRole1">Job Role:</label>
+              <label htmlFor="experienceSummary">Experience Summary:</label>
               <textarea
                 type="text"
-                id="experienceRole1"
-                name="experienceRole1"
-                value={formData.experienceRole1}
+                id="experienceSummary"
+                name="experienceSummary"
+                value={formData.experienceSummary1}
                 onChange={handleInputChange}
-                placeholder="Enter your skills"
+                placeholder="Enter your achievements/role description"
               />
             </div>
 
@@ -77,7 +91,7 @@ export default function Experience({ onSubmit }) {
                 name="experienceStartDate"
                 value={formData.experienceStartDate}
                 onChange={handleInputChange}
-                placeholder="Enter your repo url"
+                placeholder="Enter your start date"
               />
             </div>
 
@@ -89,7 +103,7 @@ export default function Experience({ onSubmit }) {
                 name="experienceEndDate"
                 value={formData.experienceEndDate}
                 onChange={handleInputChange}
-                placeholder="Enter your live project site url"
+                placeholder="Enter your end date"
               />
             </div>
 

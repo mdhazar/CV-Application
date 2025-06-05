@@ -56,34 +56,34 @@ export default function Preview({ data = "" }) {
         <div className="projects">
           <h1>{"Projects"}</h1>
           <div className="education">
-            {data.projectName1 || "Project1"}, {data.projectSkills1 || "skills"}
+            {data.projectName || "Project"}, {data.projectSkills || "skills"}
             <div>
               <a
                 href={`https://github.com/${data.project1github}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {data.project1github || "github"}
+                {data.projectGithub || "github"}
               </a>{" "}
               |{" "}
               <a
-                href={data.project1Url}
+                href={data.projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {data.project1Url || "website"}
+                {data.projectUrl || "website"}
               </a>
             </div>
           </div>
           <div>
             •{" "}
-            {data.project1Summary ||
+            {data.projectSummary ||
               "Developed a full-featured CV web application using React."}
           </div>
         <div className="experience">
           <h1>Experience</h1>
           <div className="education">
-            {data.experienceName1 || "XYZ company"}, {data.experienceRole1 || "Front end developer"}
+            {data.experienceName || "XYZ company"}, {data.jobRole || "Front end developer"}
             <div>
               {data.experienceStartDate || "startDate"} |{" "}
               {data.experienceEndDate || "endDate"}
@@ -92,7 +92,7 @@ export default function Preview({ data = "" }) {
           </div>
           <div>
             •{" "}
-            {data.project1Summary ||
+            {data.experienceSummary ||
               "Developed a full-featured CV web application using React."}
           </div>
           

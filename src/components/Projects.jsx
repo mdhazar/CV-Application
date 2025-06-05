@@ -2,10 +2,10 @@ import { useState } from "react";
 
 export default function Projects({ onSubmit }) {
   const [formData, setFormData] = useState({
-    projectName1: "",
-    projectSkills1: "",
-    project1github: "",
-    project1Url: "",
+    projectName: "",
+    projectSkills: "",
+    projectGithub: "",
+    projectUrl: "",
   });
   const [showForm, setShowForm] = useState(false);
   const handleInputChange = (event) => {
@@ -25,10 +25,11 @@ export default function Projects({ onSubmit }) {
 
   const handleReset = () => {
     setFormData({
-      projectName1: "",
-      projectSkills1: "",
-      project1github: "",
-      project1Url: "",
+      projectName: "",
+      projectSkills: "",
+      projectGithub: "",
+      projectUrl: "",
+      projectSummary:"",
     });
   };
   const toggleForm = () => {
@@ -46,50 +47,61 @@ export default function Projects({ onSubmit }) {
         <div className="general-info">
           <div>
             <div>
-              <label htmlFor="projectName1">Project Name:</label>
+              <label htmlFor="projectName">Project Name:</label>
               <input
                 type="text"
-                id="projectName1"
-                name="projectName1"
-                value={formData.projectName1}
+                id="projectName"
+                name="projectName"
+                value={formData.projectName}
                 onChange={handleInputChange}
                 placeholder="Enter your project name"
               />
             </div>
 
             <div>
-              <label htmlFor="projectSkills1">Project Skills:</label>
-              <textarea
+              <label htmlFor="projectSkills">Project Skills:</label>
+              <input
                 type="text"
-                id="projectSkills1"
-                name="projectSkills1"
-                value={formData.projectSkills1}
+                id="projectSkills"
+                name="projectSkills"
+                value={formData.projectSkills}
                 onChange={handleInputChange}
                 placeholder="Enter your skills"
               />
             </div>
 
             <div>
-              <label htmlFor="project1github">Github:</label>
+              <label htmlFor="projectGithub">Github:</label>
               <input
                 type="text"
-                id="project1github"
-                name="project1github"
-                value={formData.project1github}
+                id="projectGithub"
+                name="projectGithub"
+                value={formData.projectGithub}
                 onChange={handleInputChange}
                 placeholder="Enter your repo url"
               />
             </div>
 
             <div>
-              <label htmlFor="project1Url">Website:</label>
+              <label htmlFor="projectUrl">Website:</label>
               <input
                 type="text"
-                id="project1Url"
-                name="project1Url"
-                value={formData.project1Url}
+                id="projectUrl"
+                name="projectUrl"
+                value={formData.projectUrl}
                 onChange={handleInputChange}
                 placeholder="Enter your live project site url"
+              />
+            </div>
+            <div>
+              <label htmlFor="projectSummary">Project Summary:</label>
+              <textarea
+                type="text"
+                id="projectSummary"
+                name="projectSummary"
+                value={formData.projectSummary}
+                onChange={handleInputChange}
+                placeholder="Enter your project description"
               />
             </div>
 
