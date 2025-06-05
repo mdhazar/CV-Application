@@ -7,8 +7,8 @@ import Education from "./Education";
 import Skills from "./Skills";
 import Experience from "./Experience";
 export default function ResumeBuilder() {
-  const [data, setData] = useState();
-  const onChangeName = (formData) => {
+  const [data, setData] = useState({});
+  const handleFormChange = (formData) => {
     setData((prevData) => ({
       ...prevData,
       ...formData,
@@ -18,14 +18,14 @@ export default function ResumeBuilder() {
   return (
     <div className="container">
       <div className="forms">
-        <GeneralInfo onSubmit={onChangeName} />
-        <Summary onSubmit={onChangeName} />
-        <Education onSubmit={onChangeName} />
-        <Skills onSubmit={onChangeName} />
-        <Projects onSubmit={onChangeName} />
-        <Experience onSubmit={onChangeName}/>
+        <GeneralInfo onSubmit={handleFormChange} />
+        <Summary onSubmit={handleFormChange} />
+        <Education onSubmit={handleFormChange} />
+        <Skills onSubmit={handleFormChange} />
+        <Projects onSubmit={handleFormChange} />
+        <Experience onSubmit={handleFormChange}/>
       </div>
-      <div>
+      <div className="preview-section">
         <Preview data={data} />
       </div>
     </div>
