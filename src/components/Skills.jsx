@@ -7,7 +7,6 @@ export default function Skills({ onSubmit }) {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    console.log("Input changed:", name, value);
     setFormData({
       ...formData,
       [name]: value,
@@ -17,7 +16,6 @@ export default function Skills({ onSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("Form submitted with data:", formData);
     onSubmit(formData);
   }
 

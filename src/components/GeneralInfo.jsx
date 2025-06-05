@@ -12,7 +12,6 @@ export default function GeneralInfo({ onSubmit }) {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    console.log("Input changed:", name, value);
     setFormData({
       ...formData,
       [name]: value,
@@ -21,7 +20,6 @@ export default function GeneralInfo({ onSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("Form submitted with data:", formData);
     onSubmit(formData);
   }
 
