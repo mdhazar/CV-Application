@@ -1,82 +1,58 @@
 import { useState } from "react";
 
 export default function Summary({ onSubmit }) {
-  const [summary, setSummary] = useState([""]);
+  const [summaries, setSummaries] = useState([""]);
   const [showForm, setShowForm] = useState(false);
 
   const handleInputChange = (index, value) => {
-    const updatedSummary = [...summary];
-    updatedSummary[index] = value;
-    setSummary(updatedSummary);
+    const updatedSummaries = [...summaries];
+    updatedSummaries[index] = value;
+    setSummaries(updatedSummaries);
   };
 
-  const addSummary = () => {
-    setSummary([...summary, ""]);
+  const addSummary = () => setSummaries([...summaries, ""]);
+  const removeSummary = (index) =>
+    setSummaries(summaries.filter((_, i) => i !== index));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({ summary: summaries });
   };
-
-  const removeSummary = (index) => {
-    const updatedSummary = summary.filter((_, i) => i !== index);
-    setSummary(updatedSummary);
-  };
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    onSubmit({ summary });
-  }
-
-  const handleReset = () => {
-    setSummary([""]);
-  };
-
-  const toggleForm = () => {
-    setShowForm(!showForm);
-  };
+  const handleReset = () => setSummaries([""]);
 
   return (
     <div>
-      <div>
-        <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-          Summary
-        </h1>
-      </div>
+      <h1 onClick={() => setShowForm(!showForm)} style={{ cursor: "pointer" }}>
+        Summary
+      </h1>
       {showForm && (
         <div className="general-info">
-          <div>
-            {summary.map((summary, index) => (
-              <div key={index}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "10px",
-                  }}
+          {summaries.map((summary, index) => (
+            <div
+              key={index}
+              style={{ display: "flex", gap: "10px", marginBottom: "10px" }}
+            >
+              <textarea
+                value={summary}
+                onChange={(e) => handleInputChange(index, e.target.value)}
+                placeholder={`Summary ${index + 1}`}
+                rows={4}
+              />
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: "5px" }}
+              >
+                <button
+                  onClick={() => removeSummary(index)}
+                  style={{ backgroundColor: "#ff4757", color: "white" }}
                 >
-                  <textarea
-                    rows={4}
-                    value={summary}
-                    onChange={(e) => handleInputChange(index, e.target.value)}
-                    placeholder={`Enter summary ${index + 1}`}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => removeSummary(index)}
-                    style={{
-                      backgroundColor: "#ff4757",
-                      color: "white",
-                    }}
-                  >
-                    X
-                  </button>
-                  <button type="button" onClick={addSummary}>
-                    ＋
-                  </button>
-                </div>
+                  ✕
+                </button>
+                <button onClick={addSummary}>＋</button>
               </div>
-            ))}
-            <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
-              <button onClick={handleSubmit}>Submit</button>
-              <button onClick={handleReset}>Reset</button>
             </div>
+          ))}
+          <div style={{ display: "flex", gap: "10px" }}>
+            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleReset}>Reset</button>
           </div>
         </div>
       )}

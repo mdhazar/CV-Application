@@ -73,46 +73,71 @@ Additional: AWS, Azure, Firebase, Postman, Swagger, CI/CD, Debugging, Figma, Sha
         </div>
         <div className="projects">
           <h1>{"Projects"}</h1>
-          <div className="education">
-            {data.projectName || "Project"}, {data.projectSkills || "Skills"}
+          {data.projects && data.projects.length > 0 ? (
+            data.projects.map((project, index) => (
+              <div key={index}>
+                <div className="education">
+                  {project.projectName || "Project"},{" "}
+                  {project.projectSkills || "Skills"}
+                  <div>
+                    <a
+                      href={`https://github.com/${project.projectGithub}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {"Github"}
+                    </a>{" "}
+                    |{" "}
+                    <a
+                      href={project.projectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {"Website"}
+                    </a>
+                  </div>
+                </div>
+                <div>
+                  •{" "}
+                  {project.projectSummary ||
+                    "Developed a full-featured CV web application using React."}
+                </div>
+              </div>
+            ))
+          ) : (
             <div>
-              <a
-                href={`https://github.com/${data.project1github}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {"Github"}
-              </a>{" "}
-              |{" "}
-              <a
-                href={data.projectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {"Website"}
-              </a>
+              <div className="education">
+                Project, Skills
+                <div>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    {"Github"}
+                  </a>{" "}
+                  |{" "}
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    {"Website"}
+                  </a>
+                </div>
+              </div>
+              <div>
+                • Developed a full-featured CV web application using React.
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="experience">
+          <h1>Experience</h1>
+          <div className="education">
+            {data.experienceName || "XYZ company"},{" "}
+            {data.jobRole || "Front end developer"}
+            <div>
+              {data.experienceStartDate || "Start Date"} |{" "}
+              {data.experienceEndDate || "End Date"}
             </div>
           </div>
           <div>
             •{" "}
-            {data.projectSummary ||
+            {data.experienceSummary ||
               "Developed a full-featured CV web application using React."}
-          </div>
-          <div className="experience">
-            <h1>Experience</h1>
-            <div className="education">
-              {data.experienceName || "XYZ company"},{" "}
-              {data.jobRole || "Front end developer"}
-              <div>
-                {data.experienceStartDate || "Start Date"} |{" "}
-                {data.experienceEndDate || "End Date"}
-              </div>
-            </div>
-            <div>
-              •{" "}
-              {data.experienceSummary ||
-                "Developed a full-featured CV web application using React."}
-            </div>
           </div>
         </div>
       </div>

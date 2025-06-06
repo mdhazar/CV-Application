@@ -23,7 +23,7 @@ export default function ResumeBuilder() {
         <Education onSubmit={handleFormChange} />
         <Skills onSubmit={handleFormChange} />
         <Projects onSubmit={handleFormChange} />
-        <Experience onSubmit={handleFormChange}/>
+        <Experience onSubmit={handleFormChange} />
       </div>
       <div className="preview-section">
         <Preview data={data} />

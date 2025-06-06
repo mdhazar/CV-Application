@@ -23,11 +23,11 @@ export default function Experience({ onSubmit }) {
 
   const handleReset = () => {
     setFormData({
-        experienceName: "",
-        jobRole: "",
-        experienceSummary:"",
-        experienceStartDate: "",
-        experienceEndDate: "",
+      experienceName: "",
+      jobRole: "",
+      experienceSummary: "",
+      experienceStartDate: "",
+      experienceEndDate: "",
     });
   };
   const toggleForm = () => {
@@ -54,7 +54,6 @@ export default function Experience({ onSubmit }) {
                 onChange={handleInputChange}
                 placeholder="Enter your company name"
               />
-              
             </div>
             <div>
               <label htmlFor="jobRole">Job Role:</label>
@@ -66,7 +65,6 @@ export default function Experience({ onSubmit }) {
                 onChange={handleInputChange}
                 placeholder="Enter your job role"
               />
-              
             </div>
 
             <div>

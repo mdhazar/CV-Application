@@ -1,19 +1,21 @@
 import { useState } from "react";
 
 export default function Education({ onSubmit }) {
-  const [education, setEducation] = useState([{
-    school: "",
-    department: "",
-    schoolStartDate: "",
-    schoolEndDate: ""
-  }]);
+  const [education, setEducation] = useState([
+    {
+      school: "",
+      department: "",
+      schoolStartDate: "",
+      schoolEndDate: "",
+    },
+  ]);
   const [showForm, setShowForm] = useState(false);
 
   const handleInputChange = (index, field, value) => {
     const updatedEducation = [...education];
     updatedEducation[index] = {
       ...updatedEducation[index],
-      [field]: value
+      [field]: value,
     };
     setEducation(updatedEducation);
   };
@@ -23,7 +25,7 @@ export default function Education({ onSubmit }) {
       school: "",
       department: "",
       schoolStartDate: "",
-      schoolEndDate: ""
+      schoolEndDate: "",
     };
     setEducation([...education, newEducation]);
   };
@@ -42,12 +44,14 @@ export default function Education({ onSubmit }) {
   }
 
   const handleReset = () => {
-    const resetEducation = [{
-      school: "",
-      department: "",
-      schoolStartDate: "",
-      schoolEndDate: ""
-    }];
+    const resetEducation = [
+      {
+        school: "",
+        department: "",
+        schoolStartDate: "",
+        schoolEndDate: "",
+      },
+    ];
     setEducation(resetEducation);
     onSubmit({ education: resetEducation });
   };
@@ -67,7 +71,14 @@ export default function Education({ onSubmit }) {
         <div className="general-info">
           <div>
             {education.map((edu, index) => (
-              <div key={index} style={{ border: "1px solid #ccc", padding: "10px", marginBottom: "10px" }}>
+              <div
+                key={index}
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "10px",
+                  marginBottom: "10px",
+                }}
+              >
                 <div>
                   <label htmlFor={`school-${index}`}>School:</label>
                   <input
@@ -75,7 +86,9 @@ export default function Education({ onSubmit }) {
                     id={`school-${index}`}
                     name="school"
                     value={edu.school}
-                    onChange={(e) => handleInputChange(index, 'school', e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange(index, "school", e.target.value)
+                    }
                     placeholder="Enter your school name"
                   />
                 </div>
@@ -87,7 +100,9 @@ export default function Education({ onSubmit }) {
                     id={`department-${index}`}
                     name="department"
                     value={edu.department}
-                    onChange={(e) => handleInputChange(index, 'department', e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange(index, "department", e.target.value)
+                    }
                     placeholder="Enter your department/major"
                   />
                 </div>
@@ -99,7 +114,13 @@ export default function Education({ onSubmit }) {
                     id={`startDate-${index}`}
                     name="schoolStartDate"
                     value={edu.schoolStartDate}
-                    onChange={(e) => handleInputChange(index, 'schoolStartDate', e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange(
+                        index,
+                        "schoolStartDate",
+                        e.target.value
+                      )
+                    }
                     placeholder="Enter your start date"
                   />
                 </div>
@@ -111,32 +132,36 @@ export default function Education({ onSubmit }) {
                     id={`endDate-${index}`}
                     name="schoolEndDate"
                     value={edu.schoolEndDate}
-                    onChange={(e) => handleInputChange(index, 'schoolEndDate', e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange(index, "schoolEndDate", e.target.value)
+                    }
                     placeholder="Enter your end date"
                   />
                 </div>
 
-                <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
+                <div
+                  style={{ marginTop: "10px", display: "flex", gap: "10px" }}
+                >
                   {education.length > 1 && (
-                    <button 
+                    <button
                       type="button"
                       onClick={() => removeEducation(index)}
-                      style={{ 
-                        backgroundColor: "#ff4757", 
+                      style={{
+                        backgroundColor: "#ff4757",
                         color: "white",
-                        fontSize: "1rem"
+                        fontSize: "1rem",
                       }}
                     >
                       ✕
                     </button>
                   )}
-                  <button 
+                  <button
                     type="button"
                     onClick={addEducation}
                     style={{
                       backgroundColor: "#2ed573",
                       color: "white",
-                      fontSize: "1rem"
+                      fontSize: "1rem",
                     }}
                   >
                     +
