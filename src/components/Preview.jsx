@@ -126,19 +126,35 @@ Additional: AWS, Azure, Firebase, Postman, Swagger, CI/CD, Debugging, Figma, Sha
         </div>
         <div className="experience">
           <h1>Experience</h1>
-          <div className="education">
-            {data.experienceName || "XYZ company"},{" "}
-            {data.jobRole || "Front end developer"}
+          {data.experiences && data.experiences.length > 0 ? (
+            data.experiences.map((exp, index) => (
+              <div key={index}>
+                <div className="experience">
+                  {exp.experienceName || "XYZ company"},{" "}
+                  {exp.jobRole || "Front end developer"}
+                  <div>
+                    {exp.experienceStartDate || "Start Date"} |{" "}
+                    {exp.experienceEndDate || "End Date"}
+                  </div>
+                </div>
+                <div>
+                  •{" "}
+                  {exp.experienceSummary ||
+                    "Developed a full-featured CV web application using React."}
+                </div>
+              </div>
+            ))
+          ) : (
             <div>
-              {data.experienceStartDate || "Start Date"} |{" "}
-              {data.experienceEndDate || "End Date"}
+              <div className="experience">
+                XYZ company, Front end developer
+                <div>Start Date | End Date</div>
+              </div>
+              <div>
+                • Developed a full-featured CV web application using React.
+              </div>
             </div>
-          </div>
-          <div>
-            •{" "}
-            {data.experienceSummary ||
-              "Developed a full-featured CV web application using React."}
-          </div>
+          )}
         </div>
       </div>
     </div>
