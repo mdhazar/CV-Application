@@ -64,7 +64,7 @@ export default function Education({ onSubmit }) {
     <div>
       <div>
         <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-          Education
+          Education {showForm ? "▼" : "▶"}
         </h1>
       </div>
       {showForm && (

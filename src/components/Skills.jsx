@@ -36,7 +36,7 @@ export default function Skills({ onSubmit }) {
     <div>
       <div>
         <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-          Skills
+          Skills {showForm ? "▼" : "▶"}
         </h1>
       </div>
       {showForm && (

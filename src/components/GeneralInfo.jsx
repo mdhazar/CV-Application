@@ -41,7 +41,7 @@ export default function GeneralInfo({ onSubmit }) {
     <div>
       <div>
         <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-          General Information
+          General Information {showForm ? "▼" : "▶"}
         </h1>
       </div>
       {showForm && (

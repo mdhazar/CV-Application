@@ -22,7 +22,7 @@ export default function Summary({ onSubmit }) {
   return (
     <div>
       <h1 onClick={() => setShowForm(!showForm)} style={{ cursor: "pointer" }}>
-        Summary
+        Summary {showForm ? "▼" : "▶"}
       </h1>
       {showForm && (
         <div className="general-info">
