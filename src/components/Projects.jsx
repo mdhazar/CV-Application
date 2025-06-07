@@ -62,7 +62,7 @@ export default function Projects({ onSubmit }) {
   return (
     <div>
       <h1 onClick={() => setShowForm(!showForm)} style={{ cursor: "pointer" }}>
-        Projects
+        Projects {showForm ? "▼" : "▶"}
       </h1>
       {showForm && (
         <div className="general-info">
