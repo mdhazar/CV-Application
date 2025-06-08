@@ -35,10 +35,10 @@ export default function Skills({ onSubmit }) {
   return (
     <div>
       <div>
-      <h1 onClick={toggleForm} className="header">
-        Skills 
-        <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
-      </h1>
+        <h1 onClick={toggleForm} className="header">
+          Skills
+          <div className={`arrow ${showForm ? "expanded" : ""}`}></div>
+        </h1>
       </div>
       {showForm && (
         <div className="general-info">

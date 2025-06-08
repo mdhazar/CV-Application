@@ -26,7 +26,7 @@ export default function Summary({ onSubmit }) {
     <div>
       <h1 onClick={toggleForm} className="header">
         Summary
-        <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
+        <div className={`arrow ${showForm ? "expanded" : ""}`}></div>
       </h1>
       {showForm && (
         <div className="general-info">

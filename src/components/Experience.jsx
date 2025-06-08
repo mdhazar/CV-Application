@@ -67,7 +67,7 @@ export default function Experience({ onSubmit }) {
     <div>
       <h1 onClick={toggleForm} className="header">
         Experience
-        <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
+        <div className={`arrow ${showForm ? "expanded" : ""}`}></div>
       </h1>
       {showForm && (
         <div className="general-info">
@@ -83,118 +83,114 @@ export default function Experience({ onSubmit }) {
                 gap: "10px",
               }}
             >
-                <div>
-                  <label htmlFor={`experienceName-${index}`}>
-                    Company Name:
-                  </label>
-                  <input
-                    type="text"
-                    id={`experienceName-${index}`}
-                    value={exp.experienceName}
-                    onChange={(e) =>
-                      handleInputChange(index, "experienceName", e.target.value)
-                    }
-                    placeholder="Enter your company name"
-                  />
-                </div>
+              <div>
+                <label htmlFor={`experienceName-${index}`}>Company Name:</label>
+                <input
+                  type="text"
+                  id={`experienceName-${index}`}
+                  value={exp.experienceName}
+                  onChange={(e) =>
+                    handleInputChange(index, "experienceName", e.target.value)
+                  }
+                  placeholder="Enter your company name"
+                />
+              </div>
 
-                <div>
-                  <label htmlFor={`jobRole-${index}`}>Job Role:</label>
-                  <input
-                    type="text"
-                    id={`jobRole-${index}`}
-                    value={exp.jobRole}
-                    onChange={(e) =>
-                      handleInputChange(index, "jobRole", e.target.value)
-                    }
-                    placeholder="Enter your job role"
-                  />
-                </div>
+              <div>
+                <label htmlFor={`jobRole-${index}`}>Job Role:</label>
+                <input
+                  type="text"
+                  id={`jobRole-${index}`}
+                  value={exp.jobRole}
+                  onChange={(e) =>
+                    handleInputChange(index, "jobRole", e.target.value)
+                  }
+                  placeholder="Enter your job role"
+                />
+              </div>
 
-                <div>
-                  <label htmlFor={`experienceSummary-${index}`}>
-                    Experience Summary:
-                  </label>
-                  <textarea
-                    id={`experienceSummary-${index}`}
-                    value={exp.experienceSummary}
-                    onChange={(e) =>
-                      handleInputChange(
-                        index,
-                        "experienceSummary",
-                        e.target.value
-                      )
-                    }
-                    placeholder="Enter your achievements/role description"
-                    rows={4}
-                  />
-                </div>
+              <div>
+                <label htmlFor={`experienceSummary-${index}`}>
+                  Experience Summary:
+                </label>
+                <textarea
+                  id={`experienceSummary-${index}`}
+                  value={exp.experienceSummary}
+                  onChange={(e) =>
+                    handleInputChange(
+                      index,
+                      "experienceSummary",
+                      e.target.value
+                    )
+                  }
+                  placeholder="Enter your achievements/role description"
+                  rows={4}
+                />
+              </div>
 
-                <div>
-                  <label htmlFor={`experienceStartDate-${index}`}>
-                    Start Date:
-                  </label>
-                  <input
-                    type="text"
-                    id={`experienceStartDate-${index}`}
-                    value={exp.experienceStartDate}
-                    onChange={(e) =>
-                      handleInputChange(
-                        index,
-                        "experienceStartDate",
-                        e.target.value
-                      )
-                    }
-                    placeholder="Enter your start date"
-                  />
-                </div>
+              <div>
+                <label htmlFor={`experienceStartDate-${index}`}>
+                  Start Date:
+                </label>
+                <input
+                  type="text"
+                  id={`experienceStartDate-${index}`}
+                  value={exp.experienceStartDate}
+                  onChange={(e) =>
+                    handleInputChange(
+                      index,
+                      "experienceStartDate",
+                      e.target.value
+                    )
+                  }
+                  placeholder="Enter your start date"
+                />
+              </div>
 
-                <div>
-                  <label htmlFor={`experienceEndDate-${index}`}>
-                    End Date:
-                  </label>
-                  <input
-                    type="text"
-                    id={`experienceEndDate-${index}`}
-                    value={exp.experienceEndDate}
-                    onChange={(e) =>
-                      handleInputChange(
-                        index,
-                        "experienceEndDate",
-                        e.target.value
-                      )
-                    }
-                    placeholder="Enter your end date"
-                  />
-                </div>
+              <div>
+                <label htmlFor={`experienceEndDate-${index}`}>End Date:</label>
+                <input
+                  type="text"
+                  id={`experienceEndDate-${index}`}
+                  value={exp.experienceEndDate}
+                  onChange={(e) =>
+                    handleInputChange(
+                      index,
+                      "experienceEndDate",
+                      e.target.value
+                    )
+                  }
+                  placeholder="Enter your end date"
+                />
+              </div>
 
-                <div style={{ display: "flex", gap: "10px" }}>
-                  {experiences.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => removeExperience(index)}
-                      style={{
-                        backgroundColor: "#ff4757",
-                        color: "white",
-                      }}
-                      title="Remove experience"
-                    >
-                      ✕
-                    </button>
-                  )}
+              <div style={{ display: "flex", gap: "10px" }}>
+                {experiences.length > 1 && (
                   <button
                     type="button"
-                    onClick={addExperience}
+                    onClick={() => removeExperience(index)}
                     style={{
-                      backgroundColor: "#2ed573",
+                      backgroundColor: "#ff4757",
                       color: "white",
                     }}
-                    title="Add new experience"
+                    title="Remove experience"
                   >
-                    ＋
+                    ✕
                   </button>
-                </div>
+                )}
+                <button
+                  type="button"
+                  onClick={addExperience}
+                  style={{
+                    backgroundColor: "#2ed573",
+                    color: "white",
+                  }}
+                  title="Add new experience"
+                >
+                  ＋
+                </button>
               </div>
+            </div>
           ))}
           <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
             <button onClick={handleSubmit}>Submit</button>

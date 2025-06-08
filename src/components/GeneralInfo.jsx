@@ -42,7 +42,7 @@ export default function GeneralInfo({ onSubmit }) {
       <div>
         <h1 onClick={toggleForm} className="header">
           General Information
-          <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
+          <div className={`arrow ${showForm ? "expanded" : ""}`}></div>
         </h1>
       </div>
       {showForm && (
