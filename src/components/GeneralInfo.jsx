@@ -40,8 +40,9 @@ export default function GeneralInfo({ onSubmit }) {
   return (
     <div>
       <div>
-        <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-          General Information {showForm ? "▼" : "▶"}
+        <h1 onClick={toggleForm} className="header">
+          General Information
+          <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
         </h1>
       </div>
       {showForm && (

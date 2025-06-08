@@ -35,12 +35,13 @@ export default function Skills({ onSubmit }) {
   return (
     <div>
       <div>
-        <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-          Skills {showForm ? "▼" : "▶"}
-        </h1>
+      <h1 onClick={toggleForm} className="header">
+        Skills 
+        <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
+      </h1>
       </div>
       {showForm && (
-        <div className="general-info">
+        <div className={`general-info ${showForm ? 'show' : ''}`}>
           <div>
             {skill.map((skillItem, index) => (
               <div key={index}>

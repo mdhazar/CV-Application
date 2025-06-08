@@ -18,11 +18,15 @@ export default function Summary({ onSubmit }) {
     onSubmit({ summary: summaries });
   };
   const handleReset = () => setSummaries([""]);
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
 
   return (
     <div>
-      <h1 onClick={() => setShowForm(!showForm)} style={{ cursor: "pointer" }}>
-        Summary {showForm ? "▼" : "▶"}
+      <h1 onClick={toggleForm} className="header">
+        Summary
+        <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
       </h1>
       {showForm && (
         <div className="general-info">

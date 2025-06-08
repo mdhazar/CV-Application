@@ -58,11 +58,15 @@ export default function Projects({ onSubmit }) {
     setProjects(resetProjects);
     onSubmit({ projects: resetProjects });
   };
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
 
   return (
     <div>
-      <h1 onClick={() => setShowForm(!showForm)} style={{ cursor: "pointer" }}>
-        Projects {showForm ? "▼" : "▶"}
+      <h1 onClick={toggleForm} className="header">
+        Projects
+        <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
       </h1>
       {showForm && (
         <div className="general-info">

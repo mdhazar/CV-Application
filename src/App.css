@@ -23,6 +23,27 @@
 .general {
   margin: 20mm 25mm 20mm 25mm;
 }
+.header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border: solid black;
+  border-width: 0 7px 7px 0;
+  padding: 6px;
+  transition: transform 0.4s ease;
+  transform: rotate(-45deg);
+}
+
+.arrow.expanded {
+  transform: rotate(45deg);
+}
 .preview {
   min-width: 21cm;
   width: 21cm;

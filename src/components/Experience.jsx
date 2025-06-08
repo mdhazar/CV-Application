@@ -65,8 +65,9 @@ export default function Experience({ onSubmit }) {
 
   return (
     <div>
-      <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-        Experience {showForm ? "▼" : "▶"}
+      <h1 onClick={toggleForm} className="header">
+        Experience
+        <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
       </h1>
       {showForm && (
         <div className="general-info">

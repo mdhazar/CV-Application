@@ -63,8 +63,9 @@ export default function Education({ onSubmit }) {
   return (
     <div>
       <div>
-        <h1 onClick={toggleForm} style={{ cursor: "pointer" }}>
-          Education {showForm ? "▼" : "▶"}
+        <h1 onClick={toggleForm} className="header">
+          Education
+          <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
         </h1>
       </div>
       {showForm && (
