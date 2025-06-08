@@ -177,7 +177,7 @@ export default function Projects({ onSubmit }) {
               </div>
             </div>
           ))}
-          <div style={{ display: "flex", gap: "10px", marginTop: "0" }}>
+          <div style={{ display: "flex", gap: "10px" }}>
             <button onClick={handleSubmit}>Submit</button>
             <button onClick={handleReset}>Reset</button>
           </div>

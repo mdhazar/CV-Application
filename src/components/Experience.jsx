@@ -192,7 +192,7 @@ export default function Experience({ onSubmit }) {
               </div>
             </div>
           ))}
-          <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+          <div style={{ display: "flex", gap: "10px" }}>
             <button onClick={handleSubmit}>Submit</button>
             <button onClick={handleReset}>Reset</button>
           </div>

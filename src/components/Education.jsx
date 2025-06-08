@@ -65,116 +65,108 @@ export default function Education({ onSubmit }) {
       <div>
         <h1 onClick={toggleForm} className="header">
           Education
-          <div className={`arrow ${showForm ? 'expanded' : ''}`}></div>
+          <div className={`arrow ${showForm ? "expanded" : ""}`}></div>
         </h1>
       </div>
       {showForm && (
         <div className="general-info">
-          <div>
-            {education.map((edu, index) => (
-              <div
-                key={index}
-                style={{
-                  padding: "2px",
-                  marginBottom: "0",
-                  borderRadius: "5px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
-                <div>
-                  <label htmlFor={`school-${index}`}>School:</label>
-                  <input
-                    type="text"
-                    id={`school-${index}`}
-                    name="school"
-                    value={edu.school}
-                    onChange={(e) =>
-                      handleInputChange(index, "school", e.target.value)
-                    }
-                    placeholder="Enter your school name"
-                  />
-                </div>
+          {education.map((edu, index) => (
+            <div
+              key={index}
+              style={{
+                padding: "2px",
+                marginBottom: "0",
+                borderRadius: "5px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+              }}
+            >
+              <div>
+                <label htmlFor={`school-${index}`}>School:</label>
+                <input
+                  type="text"
+                  id={`school-${index}`}
+                  name="school"
+                  value={edu.school}
+                  onChange={(e) =>
+                    handleInputChange(index, "school", e.target.value)
+                  }
+                  placeholder="Enter your school name"
+                />
+              </div>
 
-                <div>
-                  <label htmlFor={`department-${index}`}>Department:</label>
-                  <input
-                    type="text"
-                    id={`department-${index}`}
-                    name="department"
-                    value={edu.department}
-                    onChange={(e) =>
-                      handleInputChange(index, "department", e.target.value)
-                    }
-                    placeholder="Enter your department/major"
-                  />
-                </div>
+              <div>
+                <label htmlFor={`department-${index}`}>Department:</label>
+                <input
+                  type="text"
+                  id={`department-${index}`}
+                  name="department"
+                  value={edu.department}
+                  onChange={(e) =>
+                    handleInputChange(index, "department", e.target.value)
+                  }
+                  placeholder="Enter your department/major"
+                />
+              </div>
 
-                <div>
-                  <label htmlFor={`startDate-${index}`}>Start Date:</label>
-                  <input
-                    type="text"
-                    id={`startDate-${index}`}
-                    name="schoolStartDate"
-                    value={edu.schoolStartDate}
-                    onChange={(e) =>
-                      handleInputChange(
-                        index,
-                        "schoolStartDate",
-                        e.target.value
-                      )
-                    }
-                    placeholder="Enter your start date"
-                  />
-                </div>
+              <div>
+                <label htmlFor={`startDate-${index}`}>Start Date:</label>
+                <input
+                  type="text"
+                  id={`startDate-${index}`}
+                  name="schoolStartDate"
+                  value={edu.schoolStartDate}
+                  onChange={(e) =>
+                    handleInputChange(index, "schoolStartDate", e.target.value)
+                  }
+                  placeholder="Enter your start date"
+                />
+              </div>
 
-                <div>
-                  <label htmlFor={`endDate-${index}`}>End Date:</label>
-                  <input
-                    type="text"
-                    id={`endDate-${index}`}
-                    name="schoolEndDate"
-                    value={edu.schoolEndDate}
-                    onChange={(e) =>
-                      handleInputChange(index, "schoolEndDate", e.target.value)
-                    }
-                    placeholder="Enter your end date"
-                  />
-                </div>
+              <div>
+                <label htmlFor={`endDate-${index}`}>End Date:</label>
+                <input
+                  type="text"
+                  id={`endDate-${index}`}
+                  name="schoolEndDate"
+                  value={edu.schoolEndDate}
+                  onChange={(e) =>
+                    handleInputChange(index, "schoolEndDate", e.target.value)
+                  }
+                  placeholder="Enter your end date"
+                />
+              </div>
 
-                <div
-                  style={{ display: "flex", gap: "10px" }}
-                >
-                  {education.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => removeEducation(index)}
-                      style={{
-                        backgroundColor: "#ff4757",
-                        color: "white",
-                      }}
-                    >
-                      ✕
-                    </button>
-                  )}
+              <div style={{ display: "flex", gap: "10px" }}>
+                {education.length > 1 && (
                   <button
                     type="button"
-                    onClick={addEducation}
+                    onClick={() => removeEducation(index)}
                     style={{
-                      backgroundColor: "#2ed573",
+                      backgroundColor: "#ff4757",
                       color: "white",
                     }}
                   >
-                    ＋
+                    ✕
                   </button>
-                </div>
+                )}
+                <button
+                  type="button"
+                  onClick={addEducation}
+                  style={{
+                    backgroundColor: "#2ed573",
+                    color: "white",
+                  }}
+                >
+                  ＋
+                </button>
               </div>
-            ))}
-            <div style={{ display: "flex", gap: "10px" }}>
-              <button onClick={handleSubmit}>Submit</button>
-              <button onClick={handleReset}>Reset</button>
             </div>
+          ))}
+          <div style={{ display: "flex", gap: "10px" }}>
+            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleReset}>Reset</button>
           </div>
         </div>
       )}
