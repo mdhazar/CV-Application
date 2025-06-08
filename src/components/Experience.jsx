@@ -75,19 +75,14 @@ export default function Experience({ onSubmit }) {
             <div
               key={index}
               style={{
-                border: "1px solid #ccc",
-                padding: "15px",
-                marginBottom: "15px",
+                padding: "2px",
+                marginBottom: "0",
                 borderRadius: "5px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
                 <div>
                   <label htmlFor={`experienceName-${index}`}>
                     Company Name:
@@ -176,12 +171,11 @@ export default function Experience({ onSubmit }) {
                 <div style={{ display: "flex", gap: "10px" }}>
                   {experiences.length > 1 && (
                     <button
+                      type="button"
                       onClick={() => removeExperience(index)}
                       style={{
                         backgroundColor: "#ff4757",
                         color: "white",
-                        padding: "5px 10px",
-                        borderRadius: "3px",
                       }}
                       title="Remove experience"
                     >
@@ -189,12 +183,11 @@ export default function Experience({ onSubmit }) {
                     </button>
                   )}
                   <button
+                    type="button"
                     onClick={addExperience}
                     style={{
                       backgroundColor: "#2ed573",
                       color: "white",
-                      padding: "5px 10px",
-                      borderRadius: "3px",
                     }}
                     title="Add new experience"
                   >
@@ -202,7 +195,6 @@ export default function Experience({ onSubmit }) {
                   </button>
                 </div>
               </div>
-            </div>
           ))}
           <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
             <button onClick={handleSubmit}>Submit</button>

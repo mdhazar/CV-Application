@@ -75,9 +75,12 @@ export default function Education({ onSubmit }) {
               <div
                 key={index}
                 style={{
-                  border: "1px solid #ccc",
-                  padding: "10px",
-                  marginBottom: "10px",
+                  padding: "2px",
+                  marginBottom: "0",
+                  borderRadius: "5px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
                 }}
               >
                 <div>
@@ -141,7 +144,7 @@ export default function Education({ onSubmit }) {
                 </div>
 
                 <div
-                  style={{ marginTop: "10px", display: "flex", gap: "10px" }}
+                  style={{ display: "flex", gap: "10px" }}
                 >
                   {education.length > 1 && (
                     <button
@@ -150,7 +153,6 @@ export default function Education({ onSubmit }) {
                       style={{
                         backgroundColor: "#ff4757",
                         color: "white",
-                        fontSize: "1rem",
                       }}
                     >
                       ✕
@@ -162,15 +164,14 @@ export default function Education({ onSubmit }) {
                     style={{
                       backgroundColor: "#2ed573",
                       color: "white",
-                      fontSize: "1rem",
                     }}
                   >
-                    +
+                    ＋
                   </button>
                 </div>
               </div>
             ))}
-            <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
+            <div style={{ display: "flex", gap: "10px" }}>
               <button onClick={handleSubmit}>Submit</button>
               <button onClick={handleReset}>Reset</button>
             </div>

@@ -83,7 +83,7 @@ export default function Skills({ onSubmit }) {
                         backgroundColor: "#2ed573",
                         color: "white",
                         fontSize: "1rem",
-                        padding: "0.65em",
+                        padding: "0.5em",
                       }}
                     >
                       ＋

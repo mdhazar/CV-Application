@@ -74,19 +74,14 @@ export default function Projects({ onSubmit }) {
             <div
               key={index}
               style={{
-                border: "1px solid #ccc",
-                padding: "15px",
-                marginBottom: "15px",
+                padding: "2px",
+                marginBottom: "0",
                 borderRadius: "5px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
                 <div>
                   <label htmlFor={`projectName-${index}`}>Project Name:</label>
                   <input
@@ -159,33 +154,30 @@ export default function Projects({ onSubmit }) {
                 <div style={{ display: "flex", gap: "10px" }}>
                   {projects.length > 1 && (
                     <button
+                      type="button"
                       onClick={() => removeProject(index)}
                       style={{
                         backgroundColor: "#ff4757",
                         color: "white",
-                        padding: "5px 10px",
-                        borderRadius: "3px",
                       }}
                     >
                       ✕
                     </button>
                   )}
                   <button
+                    type="button"
                     onClick={addProject}
                     style={{
                       backgroundColor: "#2ed573",
                       color: "white",
-                      padding: "5px 10px",
-                      borderRadius: "3px",
                     }}
                   >
                     ＋
                   </button>
                 </div>
               </div>
-            </div>
           ))}
-          <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+          <div style={{ display: "flex", gap: "10px", marginTop: "0" }}>
             <button onClick={handleSubmit}>Submit</button>
             <button onClick={handleReset}>Reset</button>
           </div>
