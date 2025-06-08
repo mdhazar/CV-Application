@@ -41,7 +41,7 @@ export default function Skills({ onSubmit }) {
       </h1>
       </div>
       {showForm && (
-        <div className={`general-info ${showForm ? 'show' : ''}`}>
+        <div className="general-info">
           <div>
             {skill.map((skillItem, index) => (
               <div key={index}>
