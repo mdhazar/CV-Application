@@ -6,8 +6,12 @@ import Summary from "./Summary";
 import Education from "./Education";
 import Skills from "./Skills";
 import Experience from "./Experience";
+import { usePDF } from "react-to-pdf";
+
 export default function ResumeBuilder() {
   const [data, setData] = useState({});
+  const { toPDF, targetRef } = usePDF({ filename: "resume.pdf" });
+
   const handleFormChange = (formData) => {
     setData((prevData) => ({
       ...prevData,
@@ -24,9 +28,14 @@ export default function ResumeBuilder() {
         <Skills onSubmit={handleFormChange} />
         <Projects onSubmit={handleFormChange} />
         <Experience onSubmit={handleFormChange} />
+        <button onClick={() => toPDF()} className="download-button">
+          Download PDF
+        </button>
       </div>
       <div className="preview-section">
-        <Preview data={data} />
+        <div ref={targetRef}>
+          <Preview data={data} />
+        </div>
       </div>
     </div>
   );
